@@ -205,7 +205,7 @@ where
 
 #[cfg(all(feature = "registry", feature = "std"))]
 #[cfg_attr(docsrs, doc(cfg(all(feature = "registry", feature = "std"))))]
-impl<S, L> crate::layer::Filter<S> for Layer<L, S>
+impl<S, L> crate::layer::Filter<S> for Layer<L>
 where
     L: crate::layer::Filter<S> + 'static,
     S: Subscriber,
