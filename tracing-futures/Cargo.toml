@@ -30,7 +30,7 @@ std = ["tracing/std"]
 futures_01 = { package = "futures", version = "0.1.31", optional = true }
 futures = { version = "0.3.21", optional = true }
 futures-task = { version = "0.3.21", optional = true }
-pin-project-lite = { version = "0.2.9", optional = true }
+pin-project-lite = { version = "0.2.7", optional = true }
 tracing = { path = "../tracing", version = "0.1.35", default-features = false }
 tokio-executor = { version = "0.1.10", optional = true }
 tokio_01 = { package = "tokio", version = "0.1.22", optional = true }
