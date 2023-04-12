@@ -821,8 +821,8 @@ impl<F, T> Format<F, T> {
 
                 // If getting the timestamp failed, don't bail --- only bail on
                 // formatting errors.
-                if self.timer.format_time(writer).is_err() {
-                    writer.write_str("<unknown time>")?;
+                if let Err(e) = self.timer.format_time(writer) {
+                    writer.write_str(e.to_string().as_str())?;
                 }
 
                 write!(writer, "{} ", style.suffix())?;
@@ -833,8 +833,8 @@ impl<F, T> Format<F, T> {
         // Otherwise, just format the timestamp without ANSI formatting.
         // If getting the timestamp failed, don't bail --- only bail on
         // formatting errors.
-        if self.timer.format_time(writer).is_err() {
-            writer.write_str("<unknown time>")?;
+        if let Err(e) = self.timer.format_time(writer) {
+            writer.write_str(e.to_string().as_str())?;
         }
         writer.write_char(' ')
     }
